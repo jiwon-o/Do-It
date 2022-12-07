@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="src/main.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/4d6a93e0b0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <a href="#" class="toggleBox">
+          <span class="icon"></span>
+        </a>
+        <ul class="navItems">
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-list" style="--i: 1"></i>
+              <span style="--g: 1">to-do</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-calendar-days" style="--i: 2"></i>
+              <span style="--g: 2">calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-star" style="--i: 3"></i>
+              <span style="--g: 3">favorites</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <script>
+      let toggleClick = document.querySelector(".toggleBox");
+      let container = document.querySelector(".container");
+      toggleClick.addEventListener("click", () => {
+        toggleClick.classList.toggle("active");
+        container.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
