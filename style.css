@@ -36,6 +36,10 @@ a {
     color: var(--text-color);
 }
 
+ul {
+    list-style: none;
+}
+
 /* Sidebar */
 .sidebar {
     position: fixed;
@@ -48,13 +52,7 @@ a {
 }
 
 /* Reusable code */
-.sidebar li {
-    height: 50px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
+
 
 .sidebar .icon {
     min-width: 60px;
@@ -116,25 +114,26 @@ header span {
     margin-top: 20px;
 }
 
-.sidebar li a {
-    height: 100%;
-    background-color: transparent;
+.sidebar .nav-link {
+    cursor: pointer;
+    height: 50px;
+    width: 100%;
     display: flex;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    margin-top: 10px;
     border-radius: 6px;
+    background-color: transparent;
 }
 
-.sidebar li a.show,
-.sidebar li a:hover {
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
     background-color: var(--primary-color-light);
 }
 
-.sidebar li a.show .icon,
-.sidebar li a.show .text,
-.sidebar li a:hover .icon,
-.sidebar li a:hover .text {
+.sidebar .nav-link.active .icon,
+.sidebar .nav-link.active .text,
+.sidebar .nav-link:hover .icon,
+.sidebar .nav-link:hover .text {
     color: var(--primary-color);
     font-weight: 700;
 }
@@ -149,68 +148,6 @@ header span {
 
 .menu-bar::-webkit-scrollbar {
     display: none;
-}
-
-.sidebar .menu-bar .mode {
-    border-radius: 6px;
-    background-color: var(--primary-color-light);
-    position: relative;
-    transition: var(--tran-05);
-}
-
-.menu-bar .mode .sun-moon {
-    height: 50px;
-    width: 60px;
-}
-
-.mode .sun-moon i {
-    position: absolute;
-}
-
-.mode .sun-moon i.sun {
-    opacity: 0;
-}
-
-.mode .mode-text {
-    font-family: 'Poppins', sans-serif;
-}
-
-.menu-bar .bottom-content .toggle-switch {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    margin-right: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.toggle-switch .switch {
-    position: relative;
-    height: 22px;
-    width: 40px;
-    border-radius: 25px;
-    background-color: var(--toggle-color);
-    transition: var(--tran-05);
-}
-
-.switch::before {
-    content: '';
-    position: absolute;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    background-color: var(--sidebar-color);
-    transition: var(--tran-04);
-}
-
-body.dark .switch::before {
-    left: 20px;
 }
 
 .section {
