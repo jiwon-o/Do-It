@@ -4,75 +4,82 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo-List</title>
+    <title>DoIt!</title>
+
     <link rel="stylesheet" href="style.css" />
-    <script src="src/main.js" defer></script>
+    <script src="/src/main.js" defer></script>
+
+    <!-- ===== Fontawesome CSS ===== -->
     <script
       src="https://kit.fontawesome.com/4d6a93e0b0.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- ==== Boxicons CSS ==== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ===== Unicons CSS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
   </head>
   <body>
-    <section class="section">
-      <div class="navbar">
-        <a href="#" class="toggleBox">
-          <span class="icon"></span>
-        </a>
-        <ul class="navItems">
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-list" style="--i: 1"></i>
-              <span style="--g: 1">to-do</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-calendar-days" style="--i: 2"></i>
-              <span style="--g: 2">calendar</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-star" style="--i: 3"></i>
-              <span style="--g: 3">favorites</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <section class="container">
-        <div class="todo-list">
-          <header class="todo-list__header">
-            <div class="header__date">
-              <span class="date__day">8</span>
-              <div class="date__monthAndYear">
-                <span class="date__month">DEC</span>
-                <span class="date__year">2022</span>
-              </div>
-            </div>
-            <span class="header__title">todo list</span>
-          </header>
-          <form class="todo-list__add-form">
-            <input
-              type="text"
-              class="add__input"
-              placeholder="할 일을 입력하세요"
-            />
-            <button type="submit" class="add__button">
-              <i class="fa-solid fa-circle-plus"></i>
-            </button>
-          </form>
-          <ul class="todo-list__items"></ul>
+    <nav class="sidebar">
+      <header>
+        <div class="image-text">
+          <a href="#" class="image">
+            <img src="logo.png" alt="logo" />
+          </a>
+          <div class="text header-text">
+            <span class="name">환영합니다</span>
+            <span class="profession"><a href="#">오지원</a>님</span>
+          </div>
         </div>
-      </section>
-    </section>
+      </header>
 
-    <script>
-      let toggleClick = document.querySelector(".toggleBox");
-      let navbar = document.querySelector(".navbar");
-      toggleClick.addEventListener("click", () => {
-        toggleClick.classList.toggle("active");
-        navbar.classList.toggle("active");
-      });
-    </script>
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="#" class="show">
+                <i class="bx bx-star icon"></i>
+                <span class="text nav-text">오늘 할 일</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-calendar-week icon"></i>
+                <span class="text nav-text">주간 목록</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bxs-calendar icon"></i>
+                <span class="text nav-text">월간 목록</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <section class="section"></section>
   </body>
 </html>
