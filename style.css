@@ -66,57 +66,48 @@ a {
     font-size: 20px;
 }
 
-.sidebar .text,
+.sidebar p,
+.sidebar span,
 .sidebar .icon {
     color: var(--text-color);
-    transition: var(--tran-03);
 }
 
-.sidebar .text {
+.sidebar p {
     font-size: 17px;
     font-weight: 500;
     white-space: nowrap;
     opacity: 1;
 }
 
-.sidebar.close .text {
-    opacity: 0;
-}
-
 /* =========================== */
 
 .sidebar header {
-    position: relative;
-}
-
-.sidebar header .image-text {
     display: flex;
     align-items: center;
 }
 
-.sidebar header .logo-text {
+.sidebar header .title {
     display: flex;
     flex-direction: column;
 }
 
-header .image-text .name {
-    font-size: 16px;
-    font-weight: 600;
+header .name {
+    color: var(--primary-color);
 }
 
-header .image-text .profession {
+header .name,
+header span {
     font-size: 14px;
-    display: block;
 }
 
-.sidebar header .image {
+.sidebar header .logo {
     display: flex;
     align-items: center;
     margin: 8px;
     margin-right: 20px;
 }
 
-.sidebar header .image img {
+.sidebar header .logo img {
     width: 48px;
     border-radius: 50%;
 }
