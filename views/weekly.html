@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DoIt!</title>
-    <link rel="stylesheet" href="/style.css" />
-    <script src="/src/main.js" defer></script>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../src/main.js" defer></script>
     <!-- Fontawesome CSS -->
     <script
       src="https://kit.fontawesome.com/4d6a93e0b0.js"
@@ -25,50 +25,42 @@
   </head>
   <body>
     <nav class="sidebar">
-      <header>
+      <div class="logo-details">
         <a href="#" class="logo">
           <img src="/logo.png" alt="logo" />
         </a>
         <div class="title">
-          <p>환영합니다</p>
-          <span><a href="#" class="name">오지원</a>님</span>
+          <p>Just Do It!</p>
+          <span><a href="#" class="name">오지원</a>님 반갑습니다</span>
         </div>
-      </header>
+      </div>
       <div class="menu-bar">
         <div class="menu">
           <ul class="menu-links">
             <li class="nav-link">
               <a href="/index.html">
-                <i class="bx bx-star icon"></i>
-                <span class="text nav-text">오늘 할 일</span>
+                <i class="bx bx-star nav-icon"></i>
+                <span class="nav-name">오늘 할 일</span>
               </a>
+              <span class="tooltip">오늘 할 일</span>
             </li>
             <li class="nav-link">
-              <a href="/views/weekly.html" class="active">
-                <i class="bx bx-calendar-week icon"></i>
-                <span class="text nav-text">주간 목록</span>
+              <a href="/views/weekly.html">
+                <i class="bx bx-calendar-week nav-icon"></i>
+                <span class="nav-name">주간 목록</span>
               </a>
+              <span class="tooltip">주간 목록</span>
             </li>
             <li class="nav-link">
               <a href="/views/monthly.html">
-                <i class="bx bxs-calendar icon"></i>
-                <span class="text nav-text">월간 목록</span>
+                <i class="bx bxs-calendar nav-icon"></i>
+                <span class="nav-name">월간 목록</span>
               </a>
+              <span class="tooltip">월간 목록</span>
             </li>
           </ul>
         </div>
-        <div class="bottom-content">
-          <li class="mode">
-            <div class="sun-moon">
-              <i class="bx bx-moon icon moon"></i>
-              <i class="bx bx-sun icon sun"></i>
-            </div>
-            <span class="mode-text text">Dark mode</span>
-            <div class="toggle-switch">
-              <span class="switch"></span>
-            </div>
-          </li>
-        </div>
+        <i class="bx bx-chevron-right toggle-btn"></i>
       </div>
     </nav>
     <section class="section">weekly</section>
