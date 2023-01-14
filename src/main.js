@@ -1,53 +1,35 @@
-const items = document.querySelector(".todo-list__items");
-const input = document.querySelector(".add__input");
-const addBtn = document.querySelector(".add__button");
-const form = document.querySelector(".todo-list__add-form");
+"use strict";
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  onAdd();
-});
+const activePage = window.location.pathname;
+const sidebar = document.querySelector("nav");
+const navLinks = document.querySelectorAll(".nav-link a");
+const toggleBtn = document.querySelector(".toggle-btn");
 
-function onAdd() {
-  const text = input.value;
-  if (text === "") {
-    input.focus();
-    return;
-  }
-
-  const item = createItem(text);
-  items.append(item);
-  item.scrollIntoView({ block: "end" });
-
-  input.value = "";
-  input.focus();
-}
-
-let id = 0;
-function createItem(text) {
-  const itemRow = document.createElement("li");
-  itemRow.setAttribute("class", "item__row");
-  itemRow.setAttribute("data-id", id);
-  itemRow.innerHTML = `
-      <div class="item">
-        <span class="item__name">${text}</span>
-        <div class="item__btn">
-          <button class="item__btn__mark">
-            <i class="fa-solid fa-star"></i>
-          </button>
-          <button class="item__btn__delete">
-            <i class="fa-solid fa-circle-minus" data-id="${id}"></i>
-          </button>
-        </div>
-      </div>`;
-  id++;
-  return itemRow;
-}
-
-items.addEventListener("click", (e) => {
-  const id = e.target.dataset.id;
-  if (id) {
-    const deleteItem = document.querySelector(`.item__row[data-id="${id}"]`);
-    deleteItem.remove();
+/** Sidebar url link */
+navLinks.forEach((link) => {
+  if (link.href.includes(`${activePage}`)) {
+    link.classList.add("active");
   }
 });
+
+/** Sidebar open/close */
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("open");
+});
+
+/** Responsive design */
+window.addEventListener("load", onLoadAndResize);
+window.addEventListener("resize", onLoadAndResize);
+
+function onLoadAndResize() {
+  if (innerWidth >= 1024) {
+    sidebar.classList.add("open");
+  } else {
+    sidebar.classList.remove("open");
+    if (innerWidth < 420) {
+      toggleBtn.classList.add("hide");
+    } else {
+      toggleBtn.classList.remove("hide");
+    }
+  }
+}
