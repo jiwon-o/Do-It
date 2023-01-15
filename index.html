@@ -22,6 +22,12 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
+
+    <!-- Swiper CSS-->
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="/src/swiper-bundle.min.js"></script>
   </head>
   <body>
     <nav class="sidebar">
@@ -31,7 +37,7 @@
         </a>
         <div class="title">
           <p>Just Do It!</p>
-          <span><a href="#" class="name">오지원</a>님 반갑습니다</span>
+          <span><a href="#" class="user-name">오지원</a>님 반갑습니다</span>
         </div>
       </div>
       <div class="menu-bar">
@@ -81,6 +87,85 @@
         </ul>
       </div>
     </nav>
-    <section class="section">index</section>
+    <section class="section">
+      <div class="slide-container swiper">
+        <div class="card-wrapper swiper-wrapper">
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="logo.png" alt="img" class="card-img" />
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">오지원</h2>
+              <p class="description">취업하자 아자아자 파이팅!!! 가보자!!</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="logo.png" alt="img" class="card-img" />
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="card-name">오지원</h2>
+              <p class="card-description">
+                취업하자 아자아자 파이팅!!! 가보자!!
+              </p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="logo.png" alt="img" class="card-img" />
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">오지원</h2>
+              <p class="description">취업하자 아자아자 파이팅!!! 가보자!!</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </section>
   </body>
+
+  <!-- Javascript -->
+  <script>
+    let swiper = new Swiper(".slide-container", {
+      effect: "coverflow",
+      slidesPerView: "2.8",
+      spaceBetween: 30,
+      centeredSlides: true,
+      initialSlide: 1,
+      coverflowEffect: {
+        rotate: 10,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: false,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </html>

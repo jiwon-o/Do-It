@@ -42,7 +42,7 @@ li {
     list-style: none;
 }
 
-/* Sidebar */
+/* ========= Sidebar ========= */
 .sidebar {
     position: fixed;
     top: 0;
@@ -59,6 +59,7 @@ li {
     width: 255px;
 }
 
+/* ===== Sidebar header ===== */
 .sidebar p,
 .sidebar .nav-name {
     font-size: 17px;
@@ -110,7 +111,7 @@ li {
     margin-top: 1px;
 }
 
-.logo-details .title .name {
+.logo-details .title .user-name {
     color: var(--primary-color);
 }
 
@@ -118,6 +119,7 @@ li {
     font-size: 14px;
 }
 
+/* ===== Sidebar Nav tab ===== */
 .sidebar .menu-bar {
     height: calc(100% - 55px);
     display: flex;
@@ -174,6 +176,7 @@ li {
     font-weight: 700;
 }
 
+/* ===== Sidebar Tooltip ===== */
 .sidebar li .tooltip {
     position: absolute;
     left: calc(100% + 5px);
@@ -192,15 +195,15 @@ li {
     opacity: 0;
 }
 
-.sidebar .bottom-content li .tooltip {
-    transform: translateY(-55px);
-}
-
 .sidebar li:hover .tooltip {
     opacity: 1;
     pointer-events: auto;
     transition: var(--tran-04);
     transform: translateY(0);
+}
+
+.sidebar .bottom-content li .tooltip {
+    transform: translateY(-55px);
 }
 
 .sidebar .bottom-content li:hover .tooltip {
@@ -211,6 +214,7 @@ li {
     display: none;
 }
 
+/* ===== Sidebar Toggle ===== */
 .sidebar .toggle-btn {
     position: absolute;
     top: 50%;
@@ -237,6 +241,7 @@ li {
     transform: translateY(-50%) rotate(180deg);
 }
 
+/* ===== Sidebar Bottom content ===== */
 .sidebar .bottom-content {
     position: fixed;
     left: 0;
@@ -315,19 +320,119 @@ li {
     font-weight: 500;
 }
 
+/* ===== Main Section ===== */
 .section {
     position: absolute;
     top: 0;
     left: 88px;
     height: 100vh;
-    width: calc(100% - 255px);
+    width: 100%;
     background-color: var(--body-color);
     transition: var(--tran-05);
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sidebar.open~.section {
     left: 255px;
     height: 100vh;
     width: calc(100% - 255px);
+}
+
+
+.slide-container {
+    max-width: 900px;
+    width: 100%;
+    background-color: transparent;
+    padding: 40px 0;
+    margin: 0 40px;
+    border-radius: 25px;
+}
+
+.card {
+    text-align: center;
+    border-radius: 25px;
+    background-color: #fff;
+    width: 500px;
+    height: 600px;
+}
+
+
+.image-content,
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 25px;
+}
+
+.image-content {
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4070f4;
+    border-radius: 25px 25px 0 25px;
+
+}
+
+.overlay:after {
+    border-radius: 0 25px 0 0;
+    background-color: #fff;
+}
+
+.card-image {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 3px;
+}
+
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid blue;
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+}
+
+.button {
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: #4070f4;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: var(--tran-03);
+}
+
+.button:hover {
+    background: #265df2;
 }
