@@ -12,6 +12,7 @@
     --text-color-highlight: #6c62ff;
 
     /* Transition */
+    --tran-01: all 0.1s ease;
     --tran-02: all 0.2s ease;
     --tran-03: all 0.3s ease;
     --tran-04: all 0.4s ease;
@@ -40,6 +41,13 @@ a {
 
 li {
     list-style: none;
+}
+
+button {
+    outline: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 /* ========= Sidebar ========= */
@@ -341,24 +349,137 @@ li {
     width: calc(100% - 255px);
 }
 
-
 .slide-container {
     max-width: 900px;
     width: 100%;
-    background-color: transparent;
+    height: 600px;
+    background: transparent;
     padding: 40px 0;
     margin: 0 40px;
-    border-radius: 25px;
+    border-radius: 6px;
 }
 
 .card {
-    text-align: center;
-    border-radius: 25px;
+    min-width: 320px;
+    border-radius: 6px;
     background-color: #fff;
-    width: 500px;
-    height: 600px;
+    box-shadow: 1px 1px 3px 1px #dadce0;
 }
 
+.card .task-box {
+    height: calc(100% - 58px);
+    background-color: var(--primary-color-light);
+    overflow-y: scroll;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.task-box::-webkit-scrollbar {
+    display: none;
+}
+
+.task-box .task-pending,
+.task-box .task-completed {
+    margin-top: 16px;
+}
+
+.task-box span {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.task-box .task {
+    background-color: #fff;
+    height: 68px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 3px 1px #dadce0;
+    cursor: pointer;
+    transition: var(--tran-03);
+    padding: 0 8px;
+}
+
+.task-box .task:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 5px 5px -2px #dadce0;
+}
+
+.task-box .task:active {
+    transform: translate(1px, 1px);
+    box-shadow: 0px 1px 1px 0px #dadce0;
+}
+
+.task-box .task .task-info {
+    display: flex;
+}
+
+.task-box .task input {
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+
+/* ===== Input Field ===== */
+.card .input-field {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: rgba(0, 0, 0, 0.1) solid 2px;
+    padding: 8px 14px;
+}
+
+.input-field .task-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-field input {
+    flex: 2 2 auto;
+    height: 36px;
+    outline: none;
+    border: var(--toggle-color) solid 1px;
+    border-radius: 50px;
+    padding: 4px 12px;
+    font-size: 14px;
+    color: var(--text-color);
+    margin-right: 14px;
+}
+
+.input-field input::placeholder {
+    color: var(--toggle-color);
+}
+
+.input-field button {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: var(--toggle-color) solid 1px;
+    border-radius: 50%;
+    color: var(--toggle-color);
+    transition: transform 100ms ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field button i {
+    color: var(--toggle-color);
+}
+
+.input-field button:hover {
+    background-color: var(--text-color-highlight);
+    transition: var(--tran-05);
+}
+
+.input-field button:hover i {
+    color: var(--sidebar-color);
+}
 
 .image-content,
 .card-content {
@@ -419,20 +540,4 @@ li {
     font-size: 14px;
     color: #707070;
     text-align: center;
-}
-
-.button {
-    border: none;
-    font-size: 16px;
-    color: #fff;
-    padding: 8px 16px;
-    background-color: #4070f4;
-    border-radius: 6px;
-    margin: 14px;
-    cursor: pointer;
-    transition: var(--tran-03);
-}
-
-.button:hover {
-    background: #265df2;
 }
